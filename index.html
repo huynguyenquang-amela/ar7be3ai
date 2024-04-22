@@ -27,14 +27,19 @@
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker1"
             size="100">
             <a-entity id="bowser-model1" static-body scale="0.7 0.7 0.7" animation-mixer="loop: repeat"
-                gltf-model="#animated-asset1" class="clickable" gesture-handler
-                animation="property: rotation; to: 180 -90 -90; dur: 2000; easing: linear;"></a-entity>
+                gltf-model="#animated-asset1" class="clickable"
+                animation="property: rotation; to: 180 -90 -90; dur: 2000; easing: linear;"
+                position="-0.5 1 -2"></a-entity>
 
-            <a-entity position="1 1 -2" id="text1" look-at="[camera]">
+            <a-entity gesture-handler></a-entity>
+
+
+            <a-entity position="1 1 -2" id="text3" look-at="[camera]">
                 <!-- Hiển thị văn bản -->
                 <a-entity
-                    text="value: Drone11 \n\nThông số kỹ thuật:\n- Tên: Drone XYZ\n- Số cánh quạt: 4\n- Thời gian bay: 20 phút\n- Khoảng cách điều khiển: 100m\n- Camera: 4K\n- Trọng lượng: 500g\n\nMô tả: Drone XYZ là một chiếc drone tiên tiến với camera 4K và thời gian bay lên đến 20 phút. Nó được thiết kế để cung cấp hình ảnh và video chất lượng cao từ không gian cao. Đây là một công cụ tuyệt vời cho việc quay phim, chụp ảnh và giám sát. Đồng thời, nó cũng rất dễ sử dụng và có thể điều khiển từ xa."
-                    scale="2 2 2"></a-entity>
+                    text="value: Drone33 \n\nThông số kỹ thuật:\n- Tên: Drone XYZ\n- Số cánh quạt: 4\n- Thời gian bay: 20 phút\n- Khoảng cách điều khiển: 100m\n- Camera: 4K\n- Trọng lượng: 500g\n\nMô tả: Drone XYZ là một chiếc drone tiên tiến với camera 4K và thời gian bay lên đến 20 phút. Nó được thiết kế để cung cấp hình ảnh và video chất lượng cao từ không gian cao. Đây là một công cụ tuyệt vời cho việc quay phim, chụp ảnh và giám sát. Đồng thời, nó cũng rất dễ sử dụng và có thể điều khiển từ xa."
+                    scale="1.5 1.5 1.5" font="https://cdn.aframe.io/fonts/Exo2SemiBold.fnt"
+                    font-image="https://cdn.aframe.io/fonts/Exo2SemiBold.png" color="#FFF"></a-entity>
                 <!-- Tạo một mặt phẳng để làm background -->
                 <a-plane position="0 0 -0.1" scale="3 2 1" color="#000" opacity="0.8"></a-plane>
             </a-entity>
