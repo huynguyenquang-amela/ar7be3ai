@@ -23,8 +23,9 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
-    <a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;" renderer="logarithmicDepthBuffer: true;"
-        arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" id="scene" embedded gesture-detector>
+    <a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;" embedded artoolkit='sourceType: webcam;'
+        renderer='logarithmicDepthBuffer: true;' arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+        id="scene" gesture-detector>
 
         <!-- <a-entity environment="preset: contact; exposure: 2;"></a-entity> -->
 
@@ -84,6 +85,8 @@
                 text="value: Drone44 \n\nThông số kỹ thuật:\n- Tên: Drone XYZ\n- Số cánh quạt: 4\n- Thời gian bay: 20 phút\n- Khoảng cách điều khiển: 100m\n- Camera: 4K\n- Trọng lượng: 500g\n\nMô tả: Drone XYZ là một chiếc drone tiên tiến với camera 4K và thời gian bay lên đến 20 phút. Nó được thiết kế để cung cấp hình ảnh và video chất lượng cao từ không gian cao. Đây là một công cụ tuyệt vời cho việc quay phim, chụp ảnh và giám sát. Đồng thời, nó cũng rất dễ sử dụng và có thể điều khiển từ xa."
                 scale="2 2 2" look-at="[camera]"></a-entity>
         </a-marker>
+
+        <a-marker-camera camera="far:100000; near:0.01"></a-marker-camera>
 
         <a-entity camera></a-entity>
     </a-scene>
