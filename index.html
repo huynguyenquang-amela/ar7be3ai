@@ -37,7 +37,7 @@
             size="100">
             <a-entity id="bowser-model1" scale="0.7 0.7 0.7" animation-mixer="loop: repeat"
                 gltf-model="#animated-asset1" class="clickable" gesture-handler
-                animation="property: rotation; to: 0 90 0; dur: 2000; easing: linear;"></a-entity>
+                animation="property: rotation; to: 0 90 90; dur: 2000; easing: linear;"></a-entity>
 
 
             <a-entity position="0.9 0 -1" id="text1"
@@ -50,7 +50,7 @@
             size="100">
             <a-entity id="bowser-model2" scale="0.7 0.7 0.7" animation-mixer="loop: repeat"
                 gltf-model="#animated-asset2" class="clickable" gesture-handler
-                animation="property: rotation; to: 0 90 0; dur: 2000; easing: linear;"></a-entity>
+                animation="property: rotation; to: 0 90 90; dur: 2000; easing: linear;"></a-entity>
 
             <a-entity position="0.9 0 -1" id="text2"
                 text="value: Drone22 \n\nThông số kỹ thuật:\n- Tên: Drone ABC\n- Số cánh quạt: 6\n- Thời gian bay: 30 phút\n- Khoảng cách điều khiển: 150m\n- Camera: 8K\n- Trọng lượng: 800g\n\nMô tả: Drone ABC là một chiếc drone cao cấp với camera 8K và thời gian bay lên đến 30 phút. Nó được thiết kế để cung cấp hình ảnh và video chất lượng cao từ không gian cao. Đây là một công cụ tuyệt vời cho việc quay phim, chụp ảnh và giám sát. Đồng thời, nó cũng rất dễ sử dụng và có thể điều khiển từ xa."
@@ -62,7 +62,7 @@
             size="100">
             <a-entity id="bowser-model3" scale="0.7 0.7 0.7" animation-mixer="loop: repeat"
                 gltf-model="#animated-asset3" class="clickable" gesture-handler
-                animation="property: rotation; to: 0 90 0; dur: 2000; easing: linear;"></a-entity>
+                animation="property: rotation; to: 0 90 90; dur: 2000; easing: linear;"></a-entity>
 
             <a-entity position="0.9 0 -1" id="text3"
                 text="value: Drone33 \n\nThông số kỹ thuật:\n- Tên: Drone XYZ\n- Số cánh quạt: 4\n- Thời gian bay: 20 phút\n- Khoảng cách điều khiển: 100m\n- Camera: 4K\n- Trọng lượng: 500g\n\nMô tả: Drone XYZ là một chiếc drone tiên tiến với camera 4K và thời gian bay lên đến 20 phút. Nó được thiết kế để cung cấp hình ảnh và video chất lượng cao từ không gian cao. Đây là một công cụ tuyệt vời cho việc quay phim, chụp ảnh và giám sát. Đồng thời, nó cũng rất dễ sử dụng và có thể điều khiển từ xa."
@@ -74,7 +74,7 @@
             size="100">
             <a-entity id="bowser-model4" scale="0.7 0.7 0.7" animation-mixer="loop: repeat"
                 gltf-model="#animated-asset4" class="clickable" gesture-handler
-                animation="property: rotation; to: 0 90 0; dur: 2000; easing: linear;"></a-entity>
+                animation="property: rotation; to: 0 90 90; dur: 2000; easing: linear;"></a-entity>
 
             <a-entity position="0.9 0 -1" id="text4"
                 text="value: Drone44 \n\nThông số kỹ thuật:\n- Tên: Drone XYZ\n- Số cánh quạt: 4\n- Thời gian bay: 20 phút\n- Khoảng cách điều khiển: 100m\n- Camera: 4K\n- Trọng lượng: 500g\n\nMô tả: Drone XYZ là một chiếc drone tiên tiến với camera 4K và thời gian bay lên đến 20 phút. Nó được thiết kế để cung cấp hình ảnh và video chất lượng cao từ không gian cao. Đây là một công cụ tuyệt vời cho việc quay phim, chụp ảnh và giám sát. Đồng thời, nó cũng rất dễ sử dụng và có thể điều khiển từ xa."
@@ -83,6 +83,10 @@
 
         <a-entity camera></a-entity>
     </a-scene>
+
+    <script>
+        console.log("animation: ", document.getElementById("bowser-model2"));
+    </script>
 </body>
 
 </html>
