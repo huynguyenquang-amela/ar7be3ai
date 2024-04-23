@@ -22,18 +22,16 @@
       <a-asset-item id="animated-asset4" src="assets/Citroen-c4wrc-2007.glb"></a-asset-item>
     </a-assets>
 
+    <!-- Marker 1 -->
     <a-marker id="animated-marker1" type="pattern" preset="custom" url="assets/marker1.patt"
       raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker1" size="100">
       <a-entity id="bowser-model1" scale="1.6 1.6 1.6" animation-mixer="loop: repeat" gltf-model="#animated-asset1"
         class="clickable" gesture-handler animation="property: rotation; to: 180 -90 -90; dur: 2000; easing: linear;"
         position="1.5 -1.5 0"></a-entity>
 
-      <a-entity position="1 1 -2" id="text1" look-at="[camera]">
-        <a-entity text="value: Austin A40 Sports:\nStandard price: $50.000; color:black" scale="2 2 2"></a-entity>
-        <a-entity
-          text="value: Austin A40 Sports:\n$50.000\nPower: 34 kW\nTorque: 54 Nm\nAcceleration, 0-100 km/h: 25 sec\nTop Speed: 125 km/h; color:white"
-          scale="2 2 2"></a-entity>
-      </a-entity>
+      <a-entity position="1 1 -2" id="text1" look-at="[camera]" billboard-text
+        text="Austin A40 Sports:\n$50.000\nPower: 34 kW\nTorque: 54 Nm\nAcceleration, 0-100 km/h: 25 sec\nTop Speed: 125 km/h; color:black; font: https://cdn.aframe.io/fonts/mozillavr.fnt;"
+        material="color: white" scale="2 2 2"></a-entity>
     </a-marker>
 
     <a-marker id="animated-marker2" type="pattern" preset="custom" url="assets/marker2.patt"
