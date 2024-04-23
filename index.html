@@ -1,161 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-  </head>
 
-  <body style="margin: 0; overflow: hidden">
-    <a-scene
-      vr-mode-ui="enabled: false;"
-      loading-screen="enabled: false;"
-      renderer="logarithmicDepthBuffer: true;"
-      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-      id="scene"
-      embedded
-      gesture-detector
-    >
-      <a-assets>
-        <a-asset-item
-          id="animated-asset1"
-          src="assets/Austin-A40-Sports.glb"
-        ></a-asset-item>
-        <a-asset-item
-          id="animated-asset2"
-          src="assets/Citroen-c4wrc-2007.glb"
-        ></a-asset-item>
-        <a-asset-item
-          id="animated-asset3"
-          src="assets/1963-alpine-renault-a110.glb"
-        ></a-asset-item>
-        <a-asset-item
-          id="animated-asset4"
-          src="assets/Ferrari-812-Superfast.glb"
-        ></a-asset-item>
-      </a-assets>
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  <script
+    src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+  <script
+    src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+</head>
 
-      <a-marker
-        id="animated-marker1"
-        type="pattern"
-        preset="custom"
-        url="assets/marker1.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        id="marker1"
-        size="100"
-      >
+<body style="margin: 0; overflow: hidden">
+  <a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;" renderer="logarithmicDepthBuffer: true;"
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" id="scene" embedded gesture-detector>
+    <a-assets>
+      <a-asset-item id="animated-asset1" src="assets/Austin-A40-Sports.glb"></a-asset-item>
+      <a-asset-item id="animated-asset2" src="assets/Ferrari-812-Superfast.glb"></a-asset-item>
+      <a-asset-item id="animated-asset3" src="assets/1963-alpine-renault-a110.glb"></a-asset-item>
+      <a-asset-item id="animated-asset4" src="assets/Citroen-c4wrc-2007.glb"></a-asset-item>
+    </a-assets>
+
+    <a-marker id="animated-marker1" type="pattern" preset="custom" url="assets/marker1.patt"
+      raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker1" size="100">
+      <a-entity id="bowser-model1" scale="2 2 2" animation-mixer="loop: repeat" gltf-model="#animated-asset1"
+        class="clickable" gesture-handler animation="property: rotation; to: 180 -90 -90; dur: 2000; easing: linear;"
+        position="-0.5 0 0"></a-entity>
+
+      <a-entity position="1 1 -2" id="text1" look-at="[camera]">
         <a-entity
-          id="bowser-model1"
-          scale="0.7 0.7 0.7"
-          animation-mixer="loop: repeat"
-          gltf-model="#animated-asset1"
-          class="clickable"
-          gesture-handler
-          animation="property: rotation; to: 180 -90 -90; dur: 2000; easing: linear;"
-          position="-0.5 0 0"
-        ></a-entity>
+          text="value: Austin A40 Sports:\n$50.000\nPower: 34 kW\nTorque: 54 Nm\nAcceleration, 0-100 km/h: 25 sec\nTop Speed: 125 km/h; color:white"
+          scale="2 2 2"></a-entity>
+      </a-entity>
+    </a-marker>
 
-        <a-entity position="1 1 -2" id="text1" look-at="[camera]">
-          <a-entity
-            text="value: Austin A40 Sports:\n$50.000\nPower: 34 kW\nTorque: 54 Nm\nAcceleration, 0-100 km/h: 25 sec\nTop Speed: 125 km/h; color:white"
-            scale="2 2 2"
-          ></a-entity>
-        </a-entity>
-      </a-marker>
+    <a-marker id="animated-marker2" type="pattern" preset="custom" url="assets/marker2.patt"
+      raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker2" size="100">
+      <a-entity id="bowser-model2" scale="2 2 2" animation-mixer="loop: repeat" gltf-model="#animated-asset2"
+        class="clickable" gesture-handler
+        animation="property: rotation; to: 180 -90 -90; dur: 2000; easing: linear;"></a-entity>
 
-      <a-marker
-        id="animated-marker2"
-        type="pattern"
-        preset="custom"
-        url="assets/marker2.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        id="marker2"
-        size="100"
-      >
+      <a-entity position="1 1 -2" id="text2" look-at="[camera]">
         <a-entity
-          id="bowser-model2"
-          scale="0.7 0.7 0.7"
-          animation-mixer="loop: repeat"
-          gltf-model="#animated-asset2"
-          class="clickable"
-          gesture-handler
-          animation="property: rotation; to: 180 -90 -90; dur: 2000; easing: linear;"
-        ></a-entity>
+          text="value: Citroen c4wrc 2007:\n$30.000\nPower: 235 kW\nTorque: 419 Nm\nAcceleration, 0-100 km/h: 3 sec\nTop Speed: 300 km/h; color:white"
+          scale="2 2 2"></a-entity>
+      </a-entity>
+    </a-marker>
 
-        <a-entity position="1 1 -2" id="text2" look-at="[camera]">
-          <a-entity
-            text="value: Citroen c4wrc 2007:\n$30.000\nPower: 235 kW\nTorque: 419 Nm\nAcceleration, 0-100 km/h: 3 sec\nTop Speed: 300 km/h; color:white"
-            scale="2 2 2"
-          ></a-entity>
-        </a-entity>
-      </a-marker>
+    <a-marker id="animated-marker3" type="pattern" preset="custom" url="assets/marker3.patt"
+      raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker3" size="100">
+      <a-entity id="bowser-model3" scale="2 2 2" animation-mixer="loop: repeat" gltf-model="#animated-asset3"
+        class="clickable" gesture-handler
+        animation="property: rotation; to: 180 -90 -90; dur: 2000; easing: linear;"></a-entity>
 
-      <a-marker
-        id="animated-marker3"
-        type="pattern"
-        preset="custom"
-        url="assets/marker3.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        id="marker3"
-        size="100"
-      >
+      <a-entity position="1 1 -2" id="text3" look-at="[camera]">
         <a-entity
-          id="bowser-model3"
-          scale="0.7 0.7 0.7"
-          animation-mixer="loop: repeat"
-          gltf-model="#animated-asset3"
-          class="clickable"
-          gesture-handler
-          animation="property: rotation; to: 180 -90 -90; dur: 2000; easing: linear;"
-        ></a-entity>
+          text="value: 1963 alpine renault a110:\nPower: 66 kW\nTorque: 212 Nm\nAcceleration, 0-100 km/h: 10- 10.5 sec\nTop Speed: 150 km/h\nStandard price: 60.000 $; color:white"
+          scale="2 2 2"></a-entity>
+      </a-entity>
+    </a-marker>
 
-        <a-entity position="1 1 -2" id="text3" look-at="[camera]">
-          <a-entity
-            text="value: 1963 alpine renault a110:\nPower: 66 kW\nTorque: 212 Nm\nAcceleration, 0-100 km/h: 10- 10.5 sec\nTop Speed: 150 km/h\nStandard price: 60.000 $; color:white"
-            scale="2 2 2"
-          ></a-entity>
-        </a-entity>
-      </a-marker>
+    <a-marker id="animated-marker4" type="pattern" preset="custom" url="assets/marker4.patt"
+      raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker4" size="100">
+      <a-entity id="bowser-model4" scale="1.5 1.5 1.5" animation-mixer="loop: repeat" gltf-model="#animated-asset4"
+        class="clickable" gesture-handler
+        animation="property: rotation; to: 180 -90 -90; dur: 2000; easing: linear;"></a-entity>
 
-      <a-marker
-        id="animated-marker4"
-        type="pattern"
-        preset="custom"
-        url="assets/marker4.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        id="marker4"
-        size="100"
-      >
+      <a-entity position="1 1 -2" id="text4" look-at="[camera]">
         <a-entity
-          id="bowser-model4"
-          scale="0.7 0.7 0.7"
-          animation-mixer="loop: repeat"
-          gltf-model="#animated-asset4"
-          class="clickable"
-          gesture-handler
-          animation="property: rotation; to: 180 -90 -90; dur: 2000; easing: linear;"
-        ></a-entity>
+          text="value: Ferrari 812 Superfast:\n$400.000\nPower: 588 kW\nTorque: 569 Nm\nAcceleration, 0-100 km/h: 2.9 sec\nTop Speed: 340 km/h; color:white"
+          scale="2 2 2"></a-entity>
+      </a-entity>
+    </a-marker>
 
-        <a-entity position="1 1 -2" id="text4" look-at="[camera]">
-          <a-entity
-            text="value: Ferrari 812 Superfast:\n$400.000\nPower: 588 kW\nTorque: 569 Nm\nAcceleration, 0-100 km/h: 2.9 sec\nTop Speed: 340 km/h; color:white"
-            scale="2 2 2"
-          ></a-entity>
-        </a-entity>
-      </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
 
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
 </html>
